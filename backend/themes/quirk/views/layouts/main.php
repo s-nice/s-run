@@ -28,7 +28,7 @@ AppAsset::register($this);
 <header>
     <div class="headerpanel">
         <div class="logopanel">
-            <h2><a href="#"><?=isset(Yii::$app->params['title'])?Yii::$app->params['title']:'Hyii2管理系统';?></a></h2>
+            <h2><a href="#"><?=isset(Yii::$app->params['title'])?Yii::$app->params['title']:'S-RUN管理系统';?></a></h2>
         </div><!-- logopanel -->
         
         <div class="headerbar">
