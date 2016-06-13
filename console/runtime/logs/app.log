@@ -1,0 +1,254 @@
+2016-04-13 13:20:09 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\rp\hyii2\vendor\yiisoft\yii2\db\Connection.php:600
+Stack trace:
+#0 D:\rp\hyii2\vendor\yiisoft\yii2\db\Connection.php(600): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\rp\hyii2\vendor\yiisoft\yii2\db\Connection.php(542): yii\db\Connection->createPdoInstance()
+#2 D:\rp\hyii2\vendor\yiisoft\yii2\db\Connection.php(858): yii\db\Connection->open()
+#3 D:\rp\hyii2\vendor\yiisoft\yii2\db\Connection.php(845): yii\db\Connection->getMasterPdo()
+#4 D:\rp\hyii2\vendor\yiisoft\yii2\db\Command.php(219): yii\db\Connection->getSlavePdo()
+#5 D:\rp\hyii2\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Command->prepare(true)
+#6 D:\rp\hyii2\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 D:\rp\hyii2\vendor\yiisoft\yii2\db\mysql\Schema.php(198): yii\db\Command->queryAll()
+#8 D:\rp\hyii2\vendor\yiisoft\yii2\db\mysql\Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\rp\hyii2\vendor\yiisoft\yii2\db\Schema.php(146): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 D:\rp\hyii2\vendor\yiisoft\yii2\console\controllers\MigrateController.php(132): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 D:\rp\hyii2\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(680): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 D:\rp\hyii2\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(123): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 D:\rp\hyii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#15 D:\rp\hyii2\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#16 D:\rp\hyii2\vendor\yiisoft\yii2\console\Controller.php(108): yii\base\Controller->runAction('', Array)
+#17 D:\rp\hyii2\vendor\yiisoft\yii2\base\Module.php(454): yii\console\Controller->runAction('', Array)
+#18 D:\rp\hyii2\vendor\yiisoft\yii2\console\Application.php(167): yii\base\Module->runAction('migrate', Array)
+#19 D:\rp\hyii2\vendor\yiisoft\yii2\console\Application.php(143): yii\console\Application->runAction('migrate', Array)
+#20 D:\rp\hyii2\vendor\yiisoft\yii2\base\Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 D:\rp\hyii2\yii(27): yii\base\Application->run()
+#22 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\rp\hyii2\vendor\yiisoft\yii2\db\Connection.php:547
+Stack trace:
+#0 D:\rp\hyii2\vendor\yiisoft\yii2\db\Connection.php(858): yii\db\Connection->open()
+#1 D:\rp\hyii2\vendor\yiisoft\yii2\db\Connection.php(845): yii\db\Connection->getMasterPdo()
+#2 D:\rp\hyii2\vendor\yiisoft\yii2\db\Command.php(219): yii\db\Connection->getSlavePdo()
+#3 D:\rp\hyii2\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Command->prepare(true)
+#4 D:\rp\hyii2\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 D:\rp\hyii2\vendor\yiisoft\yii2\db\mysql\Schema.php(198): yii\db\Command->queryAll()
+#6 D:\rp\hyii2\vendor\yiisoft\yii2\db\mysql\Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\rp\hyii2\vendor\yiisoft\yii2\db\Schema.php(146): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 D:\rp\hyii2\vendor\yiisoft\yii2\console\controllers\MigrateController.php(132): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 D:\rp\hyii2\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(680): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 D:\rp\hyii2\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(123): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 D:\rp\hyii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#13 D:\rp\hyii2\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#14 D:\rp\hyii2\vendor\yiisoft\yii2\console\Controller.php(108): yii\base\Controller->runAction('', Array)
+#15 D:\rp\hyii2\vendor\yiisoft\yii2\base\Module.php(454): yii\console\Controller->runAction('', Array)
+#16 D:\rp\hyii2\vendor\yiisoft\yii2\console\Application.php(167): yii\base\Module->runAction('migrate', Array)
+#17 D:\rp\hyii2\vendor\yiisoft\yii2\console\Application.php(143): yii\console\Application->runAction('migrate', Array)
+#18 D:\rp\hyii2\vendor\yiisoft\yii2\base\Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 D:\rp\hyii2\yii(27): yii\base\Application->run()
+#20 {main}
+Additional Information:
+
+2016-04-13 13:20:08 [-][-][-][info][application] $_SERVER = [
+    'ACLOCAL_PATH' => '/mingw32/share/aclocal:/usr/share/aclocal'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'ANALYSIS_PATH' => 'C:\\Program Files (x86)\\HP\\LoadRunner\\'
+    'ANDROID_HOME' => 'C:\\Users\\admin\\AppData\\Local\\Android\\android-sdk'
+    'ANT_HOME' => 'C:\\apache-ant-1.9.6'
+    'APPDATA' => 'C:\\Users\\admin\\AppData\\Roaming'
+    'classpath' => 'C:\\Program Files\\Java\\jdk1.8.0_65\\jre'
+    'COMMONPROGRAMFILES' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'ADMIN-PC'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'CURR_DIR' => 'C:\\Program Files (x86)\\Hp\\LoadRunner\\dat\\Setup\\LoadRunner\\MSBuild\\..\\..\\..\\..'
+    'DEVMGR_SHOW_DETAILS' => '1'
+    'DEVMGR_SHOW_NONPRESENT_DEVICES' => '1'
+    'DISPLAY' => 'needs-to-be-defined'
+    'EXEPATH' => 'd:\\Program Files (x86)\\Git'
+    'EXTRACTPATH' => 'C:\\Program Files (x86)\\Hp\\LoadRunner\\dat\\Setup\\LoadRunner\\MSBuild\\..\\..\\..\\..'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'FTP_PASSIVE' => '1'
+    'HOME' => 'C:\\Users\\admin'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\admin'
+    'HOSTNAME' => 'admin-PC'
+    'INFOPATH' => '/usr/local/info:/usr/share/info:/usr/info:/share/info:'
+    'JAVA_HOME' => 'C:\\Program Files\\Java\\jdk1.8.0_65'
+    'LANG' => 'zh_CN.UTF-8'
+    'LG_PATH' => 'C:\\Program Files (x86)\\HP\\LoadRunner\\'
+    'LOCALAPPDATA' => 'C:\\Users\\admin\\AppData\\Local'
+    'LOGGER_CONFIG_PATH' => 'C:\\Program Files (x86)\\HP\\LoadRunner\\dat\\ltlogconf.xml'
+    'LOGONSERVER' => '\\\\ADMIN-PC'
+    'LOG_FILE' => 'C:\\Users\\admin\\AppData\\Local\\Temp\\ihp_custom_batches.log'
+    'LR_PATH' => 'C:\\Program Files (x86)\\HP\\LoadRunner\\'
+    'LR_ROOT' => 'C:\\Program Files (x86)\\HP\\LoadRunner\\'
+    'LSERVRC' => 'C:\\ProgramData\\HP\\Functional testing\\License\\lservrc'
+    'MANPATH' => '/mingw32/share/man:/usr/local/man:/usr/share/man:/usr/man:/share/man:'
+    'MAVEN_HOME' => 'C:\\apache-maven-3.3.9'
+    'MSJAVA_ENABLE_MONITORS' => '1'
+    'MSYSTEM' => 'MINGW32'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OS' => 'Windows_NT'
+    'PATH' => 'C:\\Users\\admin\\bin;D:\\Program Files (x86)\\Git\\mingw32\\bin;D:\\Program Files (x86)\\Git\\usr\\local\\bin;D:\\Program Files (x86)\\Git\\usr\\bin;D:\\Program Files (x86)\\Git\\usr\\bin;D:\\Program Files (x86)\\Git\\mingw32\\bin;D:\\Program Files (x86)\\Git\\usr\\bin;C:\\Users\\admin\\bin;C:\\Program Files\\Java\\jdk1.8.0_65\\bin;C:\\Program Files (x86)\\Common Files\\microsoft shared\\TigerKin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\admin\\AppData\\Local\\Android\\android-sdk\\tools;C:\\ADB;C:\\Windows\\SysWOW64;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\nodejs;C:\\apache-ant-1.9.6\\bin;C:\\apache-maven-3.3.9\\bin;C:\\Appium\\node_modules\\.bin;C:\\Users\\admin\\AppData\\Local\\Android\\android-sdk\\platform-tools;C:\\Users\\admin\\AppData\\Local\\Android\\android-sdk\\tools;C:\\Users\\admin\\AppData\\Local\\Android\\android-sdk\\build-tools\\23.0.2;D:\\phpStudy\\php56n;C:\\ProgramData\\ComposerSetup\\bin;D:\\HashiCorp\\Vagrant\\bin;C:\\Program Files\\Git\\cmd;D:\\Program Files (x86)\\Git\\cmd;C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python35\\Scripts;C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python35;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin;D:\\Program Files (x86)\\Git\\usr\\bin\\vendor_perl;D:\\Program Files (x86)\\Git\\usr\\bin\\core_perl'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PKG_CONFIG_PATH' => '/mingw32/lib/pkgconfig:/mingw32/share/pkgconfig'
+    'PLINK_PROTOCOL' => 'ssh'
+    'PRINTER' => 'Microsoft XPS Document Writer'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'PROGRAMFILES' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PS1' => '\\[\\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\\007\\]\\n\\[\\033[32m\\]\\u@\\h \\[\\033[35m\\]$MSYSTEM \\[\\033[33m\\]\\w\\[\\033[36m\\]`__git_ps1`\\[\\033[0m\\]\\n$ '
+    'PSModulePath' => 'C:\\windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'PWD' => '/d/rp/hyii2'
+    'SESSIONNAME' => 'Console'
+    'SHELL' => 'D:\\Program Files (x86)\\Git\\usr\\bin\\bash'
+    'SHLVL' => '1'
+    'SSH_ASKPASS' => '/mingw32/libexec/git-core/git-gui--askpass'
+    'SYSTEMDRIVE' => 'C:'
+    'SYSTEMROOT' => 'C:\\windows'
+    'TARGETDIR' => 'C:\\Program Files (x86)\\Hp\\LoadRunner\\dat\\Setup\\LoadRunner\\MSBuild\\..\\..\\..\\..'
+    'TEMP' => 'C:\\Users\\admin\\AppData\\Local\\Temp'
+    'TERM' => 'xterm'
+    'TigerKin' => 'C:\\Program Files (x86)\\Common Files\\microsoft shared\\TigerKin'
+    'TMP' => 'C:\\Users\\admin\\AppData\\Local\\Temp'
+    'TMPDIR' => 'C:\\Users\\admin\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'admin-PC'
+    'USERNAME' => 'admin'
+    'USERPROFILE' => 'C:\\Users\\admin'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'VUGEN_PATH' => 'C:\\Program Files (x86)\\HP\\LoadRunner\\'
+    'WINDIR' => 'C:\\windows'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    '_' => '/usr/bin/winpty'
+    '_classload_hook' => 'jvmhook'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1460524808.1147
+    'REQUEST_TIME' => 1460524808
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2016-04-13 13:22:07 [-][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'Invalid path alias: @yii\rbac\migrations' in D:\rp\hyii2\vendor\yiisoft\yii2\BaseYii.php:152
+Stack trace:
+#0 D:\rp\hyii2\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(88): yii\BaseYii::getAlias('@yii\\rbac\\migra...')
+#1 D:\rp\hyii2\vendor\yiisoft\yii2\console\controllers\MigrateController.php(104): yii\console\controllers\BaseMigrateController->beforeAction(Object(yii\base\InlineAction))
+#2 D:\rp\hyii2\vendor\yiisoft\yii2\base\Controller.php(152): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#3 D:\rp\hyii2\vendor\yiisoft\yii2\console\Controller.php(108): yii\base\Controller->runAction('', Array)
+#4 D:\rp\hyii2\vendor\yiisoft\yii2\base\Module.php(454): yii\console\Controller->runAction('', Array)
+#5 D:\rp\hyii2\vendor\yiisoft\yii2\console\Application.php(167): yii\base\Module->runAction('migrate', Array)
+#6 D:\rp\hyii2\vendor\yiisoft\yii2\console\Application.php(143): yii\console\Application->runAction('migrate', Array)
+#7 D:\rp\hyii2\vendor\yiisoft\yii2\base\Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 D:\rp\hyii2\yii(27): yii\base\Application->run()
+#9 {main}
+2016-04-13 13:22:07 [-][-][-][info][application] $_SERVER = [
+    'ACLOCAL_PATH' => '/mingw32/share/aclocal:/usr/share/aclocal'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'ANALYSIS_PATH' => 'C:\\Program Files (x86)\\HP\\LoadRunner\\'
+    'ANDROID_HOME' => 'C:\\Users\\admin\\AppData\\Local\\Android\\android-sdk'
+    'ANT_HOME' => 'C:\\apache-ant-1.9.6'
+    'APPDATA' => 'C:\\Users\\admin\\AppData\\Roaming'
+    'classpath' => 'C:\\Program Files\\Java\\jdk1.8.0_65\\jre'
+    'COMMONPROGRAMFILES' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'ADMIN-PC'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'CURR_DIR' => 'C:\\Program Files (x86)\\Hp\\LoadRunner\\dat\\Setup\\LoadRunner\\MSBuild\\..\\..\\..\\..'
+    'DEVMGR_SHOW_DETAILS' => '1'
+    'DEVMGR_SHOW_NONPRESENT_DEVICES' => '1'
+    'DISPLAY' => 'needs-to-be-defined'
+    'EXEPATH' => 'd:\\Program Files (x86)\\Git'
+    'EXTRACTPATH' => 'C:\\Program Files (x86)\\Hp\\LoadRunner\\dat\\Setup\\LoadRunner\\MSBuild\\..\\..\\..\\..'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'FTP_PASSIVE' => '1'
+    'HOME' => 'C:\\Users\\admin'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\admin'
+    'HOSTNAME' => 'admin-PC'
+    'INFOPATH' => '/usr/local/info:/usr/share/info:/usr/info:/share/info:'
+    'JAVA_HOME' => 'C:\\Program Files\\Java\\jdk1.8.0_65'
+    'LANG' => 'zh_CN.UTF-8'
+    'LG_PATH' => 'C:\\Program Files (x86)\\HP\\LoadRunner\\'
+    'LOCALAPPDATA' => 'C:\\Users\\admin\\AppData\\Local'
+    'LOGGER_CONFIG_PATH' => 'C:\\Program Files (x86)\\HP\\LoadRunner\\dat\\ltlogconf.xml'
+    'LOGONSERVER' => '\\\\ADMIN-PC'
+    'LOG_FILE' => 'C:\\Users\\admin\\AppData\\Local\\Temp\\ihp_custom_batches.log'
+    'LR_PATH' => 'C:\\Program Files (x86)\\HP\\LoadRunner\\'
+    'LR_ROOT' => 'C:\\Program Files (x86)\\HP\\LoadRunner\\'
+    'LSERVRC' => 'C:\\ProgramData\\HP\\Functional testing\\License\\lservrc'
+    'MANPATH' => '/mingw32/share/man:/usr/local/man:/usr/share/man:/usr/man:/share/man:'
+    'MAVEN_HOME' => 'C:\\apache-maven-3.3.9'
+    'MSJAVA_ENABLE_MONITORS' => '1'
+    'MSYSTEM' => 'MINGW32'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OS' => 'Windows_NT'
+    'PATH' => 'C:\\Users\\admin\\bin;D:\\Program Files (x86)\\Git\\mingw32\\bin;D:\\Program Files (x86)\\Git\\usr\\local\\bin;D:\\Program Files (x86)\\Git\\usr\\bin;D:\\Program Files (x86)\\Git\\usr\\bin;D:\\Program Files (x86)\\Git\\mingw32\\bin;D:\\Program Files (x86)\\Git\\usr\\bin;C:\\Users\\admin\\bin;C:\\Program Files\\Java\\jdk1.8.0_65\\bin;C:\\Program Files (x86)\\Common Files\\microsoft shared\\TigerKin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\admin\\AppData\\Local\\Android\\android-sdk\\tools;C:\\ADB;C:\\Windows\\SysWOW64;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\nodejs;C:\\apache-ant-1.9.6\\bin;C:\\apache-maven-3.3.9\\bin;C:\\Appium\\node_modules\\.bin;C:\\Users\\admin\\AppData\\Local\\Android\\android-sdk\\platform-tools;C:\\Users\\admin\\AppData\\Local\\Android\\android-sdk\\tools;C:\\Users\\admin\\AppData\\Local\\Android\\android-sdk\\build-tools\\23.0.2;D:\\phpStudy\\php56n;C:\\ProgramData\\ComposerSetup\\bin;D:\\HashiCorp\\Vagrant\\bin;C:\\Program Files\\Git\\cmd;D:\\Program Files (x86)\\Git\\cmd;C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python35\\Scripts;C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python35;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin;D:\\Program Files (x86)\\Git\\usr\\bin\\vendor_perl;D:\\Program Files (x86)\\Git\\usr\\bin\\core_perl'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PKG_CONFIG_PATH' => '/mingw32/lib/pkgconfig:/mingw32/share/pkgconfig'
+    'PLINK_PROTOCOL' => 'ssh'
+    'PRINTER' => 'Microsoft XPS Document Writer'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'PROGRAMFILES' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PS1' => '\\[\\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\\007\\]\\n\\[\\033[32m\\]\\u@\\h \\[\\033[35m\\]$MSYSTEM \\[\\033[33m\\]\\w\\[\\033[36m\\]`__git_ps1`\\[\\033[0m\\]\\n$ '
+    'PSModulePath' => 'C:\\windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'PWD' => '/d/rp/hyii2'
+    'SESSIONNAME' => 'Console'
+    'SHELL' => 'D:\\Program Files (x86)\\Git\\usr\\bin\\bash'
+    'SHLVL' => '1'
+    'SSH_ASKPASS' => '/mingw32/libexec/git-core/git-gui--askpass'
+    'SYSTEMDRIVE' => 'C:'
+    'SYSTEMROOT' => 'C:\\windows'
+    'TARGETDIR' => 'C:\\Program Files (x86)\\Hp\\LoadRunner\\dat\\Setup\\LoadRunner\\MSBuild\\..\\..\\..\\..'
+    'TEMP' => 'C:\\Users\\admin\\AppData\\Local\\Temp'
+    'TERM' => 'xterm'
+    'TigerKin' => 'C:\\Program Files (x86)\\Common Files\\microsoft shared\\TigerKin'
+    'TMP' => 'C:\\Users\\admin\\AppData\\Local\\Temp'
+    'TMPDIR' => 'C:\\Users\\admin\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'admin-PC'
+    'USERNAME' => 'admin'
+    'USERPROFILE' => 'C:\\Users\\admin'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'VUGEN_PATH' => 'C:\\Program Files (x86)\\HP\\LoadRunner\\'
+    'WINDIR' => 'C:\\windows'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    '_' => '/usr/bin/winpty'
+    '_classload_hook' => 'jvmhook'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1460524927.7856
+    'REQUEST_TIME' => 1460524927
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@yii\\rbac\\migrations'
+    ]
+    'argc' => 3
+]
