@@ -2546,9 +2546,9 @@ output {
 }
 .form-control {
   display: block;
-  width: 100%;
-  height: 38px;
-  padding: 10px 12px;
+  width: auto;
+  height: 28px;
+  /*padding: 10px 12px;*/
   font-size: 12px;
   line-height: 1.42857143;
   color: #262b36;
@@ -2562,6 +2562,7 @@ output {
   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
+
 .form-control:focus {
   border-color: #66afe9;
   outline: 0;
@@ -6807,7 +6808,7 @@ button.close {
 }
 /***** BUTTONS *****/
 .btn {
-  padding: 10px 12px 9px;
+  padding: 5px 12px 5px;
   -webkit-transition: all 0.2s ease-out 0s;
   -o-transition: all 0.2s ease-out 0s;
   transition: all 0.2s ease-out 0s;
@@ -9791,7 +9792,7 @@ blockquote {
   background-color: #fff;
 }
 .nav-quirk > li {
-  border-top: 1px solid #eaecf0;
+  /*border-top: 1px solid #eaecf0;*/
   text-transform: uppercase;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
 }
@@ -14514,4 +14515,13 @@ fieldset[disabled] .btn-fb.active {
 }
 .paddingtop20 {
   padding-top: 20px;
+}
+
+
+#login-form .form-control{
+	padding: 10px 12px;
+	height: 38px;
+}
+#login-form .btn{
+	padding: 10px 12px 9px;
 }
