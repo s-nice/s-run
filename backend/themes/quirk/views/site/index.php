@@ -7,7 +7,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title];
 ?>
 <div class="site-index">
     <div class="center">
-        <p><img alt="" src="/themes/quirk/images/logo/logo.png"></p> -->
+        <p>欢迎使用！</p>
     </div>
 </div>
 
