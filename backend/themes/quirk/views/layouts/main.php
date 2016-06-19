@@ -46,7 +46,7 @@ AppAsset::register($this);
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs nav-justified" role="tablist">
                                 <li class="active"><a data-target="#notification" data-toggle="tab">消息（2）</a></li>
-                                <li><a data-target="#reminders" data-toggle="tab">提醒（4）</a></li>
+                                <li><a data-target="#reminders" data-toggle="tab">提醒（3）</a></li>
                             </ul>
     
                             <!-- Tab panes -->
@@ -78,7 +78,7 @@ AppAsset::register($this);
                                             <div class="row">
                                                 <div class="col-xs-2">
                                                     <h4>20</h4>
-                                                    <p>Aug</p>
+                                                    <p>2016.6</p>
                                                 </div>
                                                 <div class="col-xs-10">
                                                     <h5><a href="">HTML5/CSS3 Live! United States</a></h5>
