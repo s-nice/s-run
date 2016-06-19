@@ -7,7 +7,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title];
 ?>
 <div class="site-index">
     <div class="center">
-        <p>欢迎使用！</p>
+        <p style='font-size:50px;'>欢迎使用！</p>
     </div>
 </div>
 
