@@ -13,7 +13,7 @@ use common\models\Cat;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'title')->textInput(['maxlength' => true,'size'=>50]) ?>
     
     <?= $form->field($model, 'cat_id')->dropDownList(Cat::enumItems()) ?>
     
@@ -25,7 +25,7 @@ use common\models\Cat;
     <?= $form->field($model, 'content')->widget('common\widgets\ueditor\Ueditor',[
             'options'=>[
                 'initialFrameWidth' => '100%',
-                'initialFrameHeight' => 800,
+                'initialFrameHeight' => 300,
                 'toolbars' => [
                     [
                         'fullscreen', 'undo', 'redo', '|',
@@ -39,14 +39,14 @@ use common\models\Cat;
             ]
         ]) ?>
         
-    <?= $form->field($model, 'summary')->textarea(['rows' => 4]) ?>
+    <?= $form->field($model, 'summary')->textarea(['rows' => 3,'cols' => 30]) ?>
 
     <?= $form->field($model, 'top')->dropDownList(['0'=>'否','1'=>'是']) ?>
 
     <?= $form->field($model, 'is_valid')->dropDownList(['1'=>'是','0'=>'否']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? '创建' : '更新', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
