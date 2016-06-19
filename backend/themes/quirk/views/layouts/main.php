@@ -70,9 +70,9 @@ AppAsset::register($this);
                                 </div><!-- tab-pane -->
     
                                 <div role="tabpanel" class="tab-pane" id="reminders">
-                                    <h1 id="todayDay" class="today-day"></h1>
+                                    <h2 id="todayDay" class="today-day"></h2>
                                     <h3 id="todayDate" class="today-date"></h3>
-                                    <h4 class="panel-title">即将到期</h4>
+                                    
                                     <ul class="list-group">
                                         <li class="list-group-item">
                                             <div class="row">
