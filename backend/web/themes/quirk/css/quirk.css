@@ -261,11 +261,7 @@ th {
     border: 1px solid #ddd !important;
   }
 }
-@font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
+
 .glyphicon {
   position: relative;
   top: 1px;
@@ -7256,7 +7252,7 @@ fieldset[disabled] .btn-info.active {
 .input-group-btn .btn:not(.btn-lg),
 .input-group-btn .btn:not(.btn-sm),
 .input-group-btn .btn:not(.btn-xs) {
-  min-height: 38px;
+  height: 28px;
 }
 /***** BUTTON GROUPS *****/
 .btn-group .btn:not(.btn-default) + .btn:not(.btn-default),
@@ -14524,4 +14520,7 @@ fieldset[disabled] .btn-fb.active {
 }
 #login-form .btn{
 	padding: 10px 12px 9px;
+}
+table .form-control{
+	width:100%;
 }
