@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('新建', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-<?php Pjax::begin(); ?>    
+<?php Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]); ?>    
 <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             'title',
-            'summary',
+            //'summary',
             //'content:ntext',
 
             // 'cat_id',
@@ -57,7 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]
             ],
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn','header'=>'操作','headerOptions' => ['width' => '10%'],],
         ],
     ]); ?>
 <?php Pjax::end(); ?></div>
