@@ -21,21 +21,17 @@ $this->registerJs($this->render('_script.js'));
 <div class="menu-form">
     <?php $form = ActiveForm::begin(); ?>
     <?= Html::activeHiddenInput($model, 'parent', ['id' => 'parent_id']); ?>
-    <div class="row">
-        <div class="col-sm-6">
-            <?= $form->field($model, 'name')->textInput(['maxlength' => 128]) ?>
+   
+	<?= $form->field($model, 'name')->textInput(['maxlength' => 128]) ?>
 
-            <?= $form->field($model, 'parent_name')->textInput(['id' => 'parent_name']) ?>
+	<?= $form->field($model, 'parent_name')->textInput(['id' => 'parent_name']) ?>
 
-            <?= $form->field($model, 'route')->textInput(['id' => 'route']) ?>
-        </div>
-        <div class="col-sm-6">
-            <?= $form->field($model, 'order')->input('number') ?>
+	<?= $form->field($model, 'route')->textInput(['id' => 'route']) ?>
 
-            <?= $form->field($model, 'data')->textarea(['rows' => 4]) ?>
-        </div>
-    </div>
+	<?= $form->field($model, 'order')->input('number') ?>
 
+	<?= $form->field($model, 'data')->textarea(['rows' => 4]) ?>
+        
     <div class="form-group">
         <?=
         Html::submitButton($model->isNewRecord ? Yii::t('rbac-admin', 'Create') : Yii::t('rbac-admin', 'Update'), ['class' => $model->isNewRecord
