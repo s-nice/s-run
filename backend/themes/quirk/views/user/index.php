@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-
+use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
@@ -10,7 +10,7 @@ $this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
-
+<?php Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]); ?> 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
@@ -28,5 +28,5 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
-    ]); ?>
+    ]);Pjax::end(); ?>
 </div>
