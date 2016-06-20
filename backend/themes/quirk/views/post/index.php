@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'attribute' => 'id',
 				'headerOptions' => ['width' => '10%'],
 			],
-            'label_img'=>[
+            'img'=>[
                 'label' => '标签图',
                 'format' => [
                     'image',
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]
                 ],
                 'value' => function($data){
-                    return !empty($data->label_img)?Yii::$app->params['upload_url'].$data->label_img:'/themes/quirk/images/default/default.jpg';
+                    return !empty($data->img)?Yii::$app->params['upload_url'].$data->img:'/themes/quirk/images/default/default.jpg';
                 }
             ],
             'title',

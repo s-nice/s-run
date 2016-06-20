@@ -17,7 +17,7 @@ use common\models\Cat;
     
     <?= $form->field($model, 'cat_id')->dropDownList(Cat::enumItems()) ?>
     
-    <?= $form->field($model, 'label_img')->widget('common\widgets\file_upload\FileUpload',[
+    <?= $form->field($model, 'img')->widget('common\widgets\file_upload\FileUpload',[
         'config'=>[
             ]
     ]) ?>
