@@ -64,12 +64,16 @@ class CatController extends Controller
     public function actionCreate()
     {
         $model = new Cat();
-
+		$model->created_uid=Yii::$app->user->identity->id;
+		$model->created_at = time();
+		$catList=Cat::getList(0);
+		
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+				'catList'=>$catList,
             ]);
         }
     }
@@ -83,12 +87,13 @@ class CatController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
+		$catList=Cat::getList(0);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+				'catList'=>$catList,
             ]);
         }
     }
