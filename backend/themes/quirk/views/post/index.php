@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'headerOptions' => ['width' => '10%'],
 			],
             'img'=>[
-                'label' => '标签图',
+                'label' => '图片',
                 'format' => [
                     'image',
                     [
