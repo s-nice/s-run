@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\Ad;
+use common\models\Adver;
 use backend\models\AdSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -29,6 +30,17 @@ class AdController extends Controller
         ];
     }
 
+	public function actions(){
+        return [
+            'upload'=>[
+                'class' => 'common\widgets\file_upload\UploadAction',     //这里扩展地址别写错
+                'config' => [
+                    'imagePathFormat' => "/image/{yyyy}{mm}{dd}/{time}{rand:6}",
+                ]
+            ]
+        ];
+    }
+	
     /**
      * Lists all Ad models.
      * @return mixed
@@ -38,9 +50,12 @@ class AdController extends Controller
         $searchModel = new AdSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+		$avList=Adver::getList();
+		
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+			'avList'=>$avList,
         ]);
     }
 
@@ -64,12 +79,18 @@ class AdController extends Controller
     public function actionCreate()
     {
         $model = new Ad();
-
+		$model->created_uid=Yii::$app->user->identity->id;
+		$model->created_at = time();
+		$model->orderid=1;
+		
+		$avList=Adver::getList();
+		
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+				'avList'=>$avList,
             ]);
         }
     }
@@ -83,12 +104,13 @@ class AdController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
+		$avList=Adver::getList();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+				'avList'=>$avList,
             ]);
         }
     }
