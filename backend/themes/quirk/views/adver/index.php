@@ -7,30 +7,31 @@ use yii\widgets\Pjax;
 /* @var $searchModel backend\models\AdverSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Advers';
+$this->title = '广告位';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="adver-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
     <p>
-        <?= Html::a('Create Adver', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('创建', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-<?php Pjax::begin(); ?>    <?= GridView::widget([
+<?php Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            //['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
+			[
+				'attribute' => 'id',
+				'headerOptions' => ['width' => '10%'],
+			],
             'name',
             'remark',
             'created_uid',
-            'created_at',
+            'created_at:datetime',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn','header'=>'操作','headerOptions' => ['width' => '10%'],],
         ],
     ]); ?>
 <?php Pjax::end(); ?></div>
