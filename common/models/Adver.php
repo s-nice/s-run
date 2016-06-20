@@ -1,7 +1,7 @@
 <?php
 
 namespace common\models;
-
+use yii\helpers\ArrayHelper;
 use Yii;
 
 /**
@@ -49,4 +49,20 @@ class Adver extends \yii\db\ActiveRecord
             'created_at' => '创建时间',
         ];
     }
+	
+	public function getList()
+    {
+        $model = Adver::find()->all();
+        return ArrayHelper::map($model, 'id', 'name');
+    }
+	
+	public static function getName ( $id='')
+	{
+		$data=Adver::findOne($id);
+		if($data){
+			return $data['name'];
+		}else{
+			return '';
+		}
+	}
 }
