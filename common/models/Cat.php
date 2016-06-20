@@ -9,7 +9,7 @@ use yii\helpers\ArrayHelper;
  * This is the model class for table "cat".
  *
  * @property integer $id
- * @property string $cat_name
+ * @property string $name
  */
 class Cat extends \yii\db\ActiveRecord
 {
@@ -27,9 +27,9 @@ class Cat extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['cat_name'], 'required'],
+            [['name'], 'required'],
             [['id'], 'integer'],
-            [['cat_name'], 'string', 'max' => 255],
+            [['name'], 'string', 'max' => 255],
         ];
     }
 
@@ -40,14 +40,14 @@ class Cat extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'cat_name' => '分类名称',
+            'name' => '分类名称',
         ];
     }
     
     public static function enumItems()
     {       
         $dt = ['0' => '请选择'];
-        $item = ArrayHelper::map(self::find()->all(), 'id', 'cat_name');
+        $item = ArrayHelper::map(self::find()->all(), 'id', 'name');
         return ArrayHelper::merge($dt, $item);
     }
     

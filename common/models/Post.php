@@ -11,10 +11,9 @@ use Yii;
  * @property string $title
  * @property string $summary
  * @property string $content
- * @property string $label_img
+ * @property string $img
  * @property integer $cat_id
  * @property integer $user_id
- * @property string $user_name
  * @property integer $top
  * @property integer $is_valid
  * @property integer $created_at
@@ -38,7 +37,7 @@ class Post extends \yii\db\ActiveRecord
         return [
             [['content'], 'string'],
             [['cat_id', 'user_id', 'top', 'is_valid', 'created_at', 'updated_at'], 'integer'],
-            [['title', 'summary', 'label_img', 'user_name'], 'string', 'max' => 255],
+            [['title', 'summary', 'img',], 'string', 'max' => 255],
         ];
     }
 
@@ -52,10 +51,10 @@ class Post extends \yii\db\ActiveRecord
             'title' => '标题',
             'summary' => '摘要',
             'content' => '内容',
-            'label_img' => '标签图',
+            'img' => '标签图',
             'cat_id' => '分类',
             'user_id' => '用户ID',
-            'user_name' => '用户名',
+            
             'top' => '置顶',
             'is_valid' => '是否有效',
             'created_at' => '创建时间',

@@ -19,7 +19,7 @@ class CatSearch extends Cat
     {
         return [
             [['id'], 'integer'],
-            [['cat_name'], 'safe'],
+            [['name'], 'safe'],
         ];
     }
 
@@ -62,7 +62,7 @@ class CatSearch extends Cat
             'id' => $this->id,
         ]);
 
-        $query->andFilterWhere(['like', 'cat_name', $this->cat_name]);
+        $query->andFilterWhere(['like', 'name', $this->name]);
 
         return $dataProvider;
     }
