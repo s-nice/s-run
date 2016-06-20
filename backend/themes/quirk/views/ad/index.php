@@ -27,6 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'attribute' => 'id',
 				'headerOptions' => ['width' => '10%'],
 			],
+			'name',
             //'pid',
 			[
 				'attribute' => 'pid',
@@ -35,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				},
 				'filter' => $avList,
 			],
-            'name',
+            
             //'title',
             //'img',
 			'img'=>[
