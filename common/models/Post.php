@@ -51,7 +51,7 @@ class Post extends \yii\db\ActiveRecord
             'title' => '标题',
             'summary' => '摘要',
             'content' => '内容',
-            'img' => '标签图',
+            'img' => '图片',
             'cat_id' => '分类',
             'user_id' => '用户ID',
             
