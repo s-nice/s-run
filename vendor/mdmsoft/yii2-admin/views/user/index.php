@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use mdm\admin\components\Helper;
-
+use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $searchModel mdm\admin\models\searchs\User */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -15,12 +15,18 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a(Yii::t('rbac-admin', 'Create User'), ['signup'], ['class' => 'btn btn-success']) ?>
     </p>
+	<?php Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]); ?> 
     <?=
     GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            //['class' => 'yii\grid\SerialColumn'],
+			//'id',
+			[
+				'attribute' => 'id',
+				'headerOptions' => ['width' => '10%'],
+			],
             'username',
             'email:email',
             'created_at:datetime',
@@ -37,6 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'class' => 'yii\grid\ActionColumn',
                 'template' => Helper::filterActionColumn(['view', 'activate', 'delete']),
+				'header'=>'操作','headerOptions' => ['width' => '10%'],
                 'buttons' => [
                     'activate' => function($url, $model) {
                         if ($model->status == 10) {
@@ -55,5 +62,5 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
             ],
         ]);
-        ?>
+        Pjax::end();?>
 </div>

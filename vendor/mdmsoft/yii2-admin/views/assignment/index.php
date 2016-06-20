@@ -28,7 +28,7 @@ $columns[] = [
 ?>
 <div class="assignment-index">
 
-    <?php Pjax::begin(); ?>
+    <?php Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]); ?> 
     <?=
     GridView::widget([
         'dataProvider' => $dataProvider,

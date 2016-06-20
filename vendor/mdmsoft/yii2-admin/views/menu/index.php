@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a(Yii::t('rbac-admin', 'Create Menu'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php Pjax::begin(); ?>
+    <?php Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]); ?> 
     <?=
     GridView::widget([
         'dataProvider' => $dataProvider,

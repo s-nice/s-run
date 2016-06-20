@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use mdm\admin\components\RouteRule;
-
+use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $searchModel mdm\admin\models\searchs\AuthItem */
@@ -22,6 +22,7 @@ unset($rules[RouteRule::RULE_NAME]);
     <p>
         <?= Html::a(Yii::t('rbac-admin', 'Create ' . $labels['Item']), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+	<?php Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]); ?> 
     <?=
     GridView::widget([
         'dataProvider' => $dataProvider,
@@ -41,9 +42,9 @@ unset($rules[RouteRule::RULE_NAME]);
                 'attribute' => 'description',
                 'label' => Yii::t('rbac-admin', 'Description'),
             ],
-            ['class' => 'yii\grid\ActionColumn',],
+            ['class' => 'yii\grid\ActionColumn','header'=>'操作','headerOptions' => ['width' => '10%'],],
         ],
-    ])
-    ?>
+    ]);
+    Pjax::end();?>
 
 </div>

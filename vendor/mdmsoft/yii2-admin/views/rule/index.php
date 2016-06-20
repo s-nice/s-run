@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a(Yii::t('rbac-admin', 'Create Rule'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-
+	<?php Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]); ?> 
     <?=
     GridView::widget([
         'dataProvider' => $dataProvider,
@@ -31,6 +31,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn',],
         ],
     ]);
-    ?>
+    Pjax::end();?>
 
 </div>
