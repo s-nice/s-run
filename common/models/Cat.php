@@ -27,8 +27,8 @@ class Cat extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'required'],
-            [['id'], 'integer'],
+            [['name','pid','created_uid','created_at'], 'required'],
+            [['id','created_uid','created_at'], 'integer'],
             [['name'], 'string', 'max' => 255],
         ];
     }
@@ -40,7 +40,10 @@ class Cat extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => '分类名称',
+			'pid' => '上级',
+            'name' => '名称',
+			'created_uid' => '创建者',
+			'created_at' => '创建时间',
         ];
     }
     
@@ -49,6 +52,12 @@ class Cat extends \yii\db\ActiveRecord
         $dt = ['0' => '请选择'];
         $item = ArrayHelper::map(self::find()->all(), 'id', 'name');
         return ArrayHelper::merge($dt, $item);
+    }
+	
+	public function getList($pid=0)
+    {
+        $model = Cat::findAll(array('pid'=>$pid));
+        return ArrayHelper::map($model, 'id', 'name');
     }
     
 }
