@@ -28,6 +28,17 @@ class LinksController extends Controller
             ],
         ];
     }
+	
+	public function actions(){
+        return [
+            'upload'=>[
+                'class' => 'common\widgets\file_upload\UploadAction',     //这里扩展地址别写错
+                'config' => [
+                    'imagePathFormat' => "/image/{yyyy}{mm}{dd}/{time}{rand:6}",
+                ]
+            ]
+        ];
+    }
 
     /**
      * Lists all Links models.
@@ -64,7 +75,9 @@ class LinksController extends Controller
     public function actionCreate()
     {
         $model = new Links();
-
+		$model->created_uid=Yii::$app->user->identity->id;
+		$model->created_at = time();
+		$model->orderid=1;
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
