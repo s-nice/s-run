@@ -17,20 +17,20 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        //'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            //['class' => 'yii\grid\SerialColumn'],
 
             'id',
             'name',
-            'pid',
+            //'pid',
             'type',
-            'tem',
+            //'tem',
             // 'content:ntext',
             // 'orderid',
-            // 'is_show',
+            'is_show',
             // 'created_uid',
-            // 'created_at',
+            'created_at',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
