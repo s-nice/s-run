@@ -54,10 +54,20 @@ class Cat extends \yii\db\ActiveRecord
         return ArrayHelper::merge($dt, $item);
     }
 	
-	public function getList($pid=0)
+	public static function getList($pid=0)
     {
         $model = Cat::findAll(array('pid'=>$pid));
         return ArrayHelper::map($model, 'id', 'name');
     }
+	
+	public static function getName ( $id='')
+	{
+		$data=Cat::findOne($id);
+		if($data){
+			return $data['name'];
+		}else{
+			return '';
+		}
+	}
     
 }
