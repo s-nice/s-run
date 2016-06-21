@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
+use common\models\Adver;
 /* @var $this yii\web\View */
 /* @var $model common\models\Ad */
 
@@ -28,7 +28,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-			'pid',
+			//'pid',
+			[
+				'attribute'=>'pid',
+				'format' => 'raw',
+				'value' => Adver::getName($model->pid),
+			],
             'title',
             //'img',
 			[
