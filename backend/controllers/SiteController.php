@@ -5,7 +5,7 @@ use Yii;
 use yii\web\Controller;
 use backend\models\LoginForm;
 use yii\filters\VerbFilter;
-
+use common\models\Site;
 /**
  * Site controller
  */
@@ -72,5 +72,24 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+	
+	//设置
+	public function actionSet($id=1)
+    {
+        $model = Site::findOne($id);
+		if(!$model){
+			$model=new Site();
+		}
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->render('set', [
+                'model' => $model,
+            ]);
+        } else {
+            return $this->render('set', [
+                'model' => $model,
+            ]);
+        }
     }
 }
