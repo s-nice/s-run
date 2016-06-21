@@ -8,7 +8,6 @@ use yii\widgets\ActiveForm;
 /* @var $model common\models\Site */
 
 $this->title = '站点设置';
-$this->params['breadcrumbs'][] = ['label' => '站点设置', 'url' => ['set']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
