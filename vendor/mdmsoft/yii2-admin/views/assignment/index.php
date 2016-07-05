@@ -24,11 +24,12 @@ $columns[] = [
     'class' => 'yii\grid\ActionColumn',
     'template' => '{view}'
 ];
-
 ?>
 <div class="assignment-index">
 
-    <?php Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]); ?> 
+    <h1><?= Html::encode($this->title) ?></h1>
+
+    <?php Pjax::begin(); ?>
     <?=
     GridView::widget([
         'dataProvider' => $dataProvider,

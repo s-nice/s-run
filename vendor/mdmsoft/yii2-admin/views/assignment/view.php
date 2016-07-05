@@ -31,12 +31,13 @@ $this->registerJs($this->render('_script.js'));
 $animateIcon = ' <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i>';
 ?>
 <div class="assignment-index">
+    <h1><?= $this->title ?></h1>
 
     <div class="row">
         <div class="col-sm-5">
-            <input class="form-control search" style='width:100%' data-target="avaliable"
+            <input class="form-control search" data-target="avaliable"
                    placeholder="<?= Yii::t('rbac-admin', 'Search for avaliable') ?>">
-            <select multiple size="20" style='width:100%' class="form-control list" data-target="avaliable">
+            <select multiple size="20" class="form-control list" data-target="avaliable">
             </select>
         </div>
         <div class="col-sm-1">
@@ -53,9 +54,9 @@ $animateIcon = ' <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate
             ]) ?>
         </div>
         <div class="col-sm-5">
-            <input class="form-control search" style='width:100%' data-target="assigned"
+            <input class="form-control search" data-target="assigned"
                    placeholder="<?= Yii::t('rbac-admin', 'Search for assigned') ?>">
-            <select multiple size="20" style='width:100%' class="form-control list" data-target="assigned">
+            <select multiple size="20" class="form-control list" data-target="assigned">
             </select>
         </div>
     </div>

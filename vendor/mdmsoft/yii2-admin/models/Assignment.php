@@ -32,7 +32,7 @@ class Assignment extends Object
         $this->user = $user;
         parent::__construct($config);
     }
-    
+
     /**
      * Grands a roles from a user.
      * @param array $items

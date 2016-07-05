@@ -7,12 +7,12 @@ use yii\bootstrap\ActiveForm;
 /* @var $model \mdm\admin\models\form\Signup */
 
 $this->title = Yii::t('rbac-admin', 'Signup');
-$this->params['breadcrumbs'][] = ['label'=> Yii::t('rbac-admin', 'User Manage'), 'url'=>['/admin/user/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-signup">
+    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p><?=Yii::t('rbac-admin', 'Please fill out the following fields to signup:')?></p>
+    <p>Please fill out the following fields to signup:</p>
     <?= Html::errorSummary($model)?>
     <div class="row">
         <div class="col-lg-5">

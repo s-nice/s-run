@@ -165,7 +165,7 @@ class UserController extends Controller
         $model = new Signup();
         if ($model->load(Yii::$app->getRequest()->post())) {
             if ($user = $model->signup()) {
-                return $this->redirect(['/admin/user/view','id'=>$user->id]);
+                return $this->goHome();
             }
         }
 
