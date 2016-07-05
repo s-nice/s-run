@@ -25,7 +25,7 @@
         "zhuravljov/yii2-rest": "*",
 		"yiisoft/yii2-httpclient": "@dev",
         "kartik-v/yii2-export": "*",
-        "kartik-v/yii2-tree-manager": "@dev"
+        "kartik-v/yii2-tree-manager": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
