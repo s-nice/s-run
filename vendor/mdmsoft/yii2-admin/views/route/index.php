@@ -48,7 +48,7 @@ $animateIcon = ' <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate
                 ]) ?>
             </span>
         </div>
-        <select multiple size="20" class="form-control list" data-target="avaliable"></select>
+        <select multiple size="20" style='width:100%' class="form-control list" data-target="avaliable"></select>
     </div>
     <div class="col-sm-1">
         <br><br>
@@ -64,8 +64,8 @@ $animateIcon = ' <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate
         ]) ?>
     </div>
     <div class="col-sm-5">
-        <input class="form-control search" data-target="assigned"
+        <input class="form-control search" data-target="assigned" style='width:100%'
                placeholder="<?= Yii::t('rbac-admin', 'Search for assigned') ?>">
-        <select multiple size="20" class="form-control list" data-target="assigned"></select>
+        <select multiple size="20" style='width:100%' class="form-control list" data-target="assigned"></select>
     </div>
 </div>
