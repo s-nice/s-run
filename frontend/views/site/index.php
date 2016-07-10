@@ -195,9 +195,9 @@ $this->title = 'S-RUN';
 			  <a href="javascript:;" class="btn btn-primary btn-lg btn-block" style="border-radius:0; font-size: x-large; font-weight: 500;padding-top:18px;padding-bottom:16px" target="_blank">前台演示</a>
 			  <a href="javascript:;" class="btn btn-primary btn-lg btn-block" style="border-radius:0; font-size: x-large; font-weight: 500;padding-top:18px;padding-bottom:16px" target="_blank">控制面板</a>
 			  <div class="well well-sm text-center">
-				<i class="fa"></i>username:
+				username:
 				<b>demo</b>
-				<i class="fa">password:
+				password:
 				<b>111111</b>
 			  </div>
 			</div>
