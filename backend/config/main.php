@@ -16,6 +16,7 @@ return [
         'admin' => [
             'class' => 'mdm\admin\Module',       
         ],
+		'redactor' => 'yii\redactor\RedactorModule',
         'treemanager' =>  [
             'class' => '\kartik\tree\Module',
             // other module settings, refer detailed documentation
