@@ -18,6 +18,7 @@ return array(
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
     'pjkui\\kindeditor\\' => array($vendorDir . '/pjkui/kindeditor'),
+    'newerton\\fancybox\\' => array($vendorDir . '/newerton/yii2-fancybox'),
     'mdm\\admin\\' => array($vendorDir . '/mdmsoft/yii2-admin'),
     'kartik\\tree\\' => array($vendorDir . '/kartik-v/yii2-tree-manager'),
     'kartik\\plugins\\fileinput\\' => array($vendorDir . '/kartik-v/bootstrap-fileinput'),

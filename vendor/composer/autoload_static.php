@@ -33,6 +33,10 @@ class ComposerStaticInitaed39ad1b5103541f523a8477fafa0f1
         array (
             'pjkui\\kindeditor\\' => 17,
         ),
+        'n' => 
+        array (
+            'newerton\\fancybox\\' => 18,
+        ),
         'm' => 
         array (
             'mdm\\admin\\' => 10,
@@ -108,6 +112,10 @@ class ComposerStaticInitaed39ad1b5103541f523a8477fafa0f1
         'pjkui\\kindeditor\\' => 
         array (
             0 => __DIR__ . '/..' . '/pjkui/kindeditor',
+        ),
+        'newerton\\fancybox\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/newerton/yii2-fancybox',
         ),
         'mdm\\admin\\' => 
         array (
