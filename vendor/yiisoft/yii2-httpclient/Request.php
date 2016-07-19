@@ -16,6 +16,7 @@ use yii\helpers\FileHelper;
  * @property string $method Request method.
  * @property array $options Request options. This property is read-only.
  * @property string|array $url Target URL or URL parameters.
+ * @property string $fullUrl Full Target URL. This property is read-only.
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
@@ -23,9 +24,22 @@ use yii\helpers\FileHelper;
 class Request extends Message
 {
     /**
+     * @event RequestEvent an event raised right before sending request.
+     */
+    const EVENT_BEFORE_SEND = 'beforeSend';
+    /**
+     * @event RequestEvent an event raised right after request has been sent.
+     */
+    const EVENT_AFTER_SEND = 'afterSend';
+
+    /**
      * @var string|array target URL.
      */
     private $_url;
+    /**
+     * @var string|null full target URL.
+     */
+    private $_fullUrl;
     /**
      * @var string request method.
      */
@@ -45,6 +59,7 @@ class Request extends Message
     public function setUrl($url)
     {
         $this->_url = $url;
+        $this->_fullUrl = null;
         return $this;
     }
 
@@ -55,6 +70,18 @@ class Request extends Message
     public function getUrl()
     {
         return $this->_url;
+    }
+
+    /**
+     * Returns full target URL, including [[Client::baseUrl]] as a string.
+     * @return string full target URL.
+     */
+    public function getFullUrl()
+    {
+        if ($this->_fullUrl === null) {
+            $this->_fullUrl = $this->createFullUrl($this->getUrl());
+        }
+        return $this->_fullUrl;
     }
 
     /**
@@ -192,8 +219,6 @@ class Request extends Message
      */
     public function prepare()
     {
-        $this->prepareUrl();
-
         $content = $this->getContent();
         if ($content === null) {
             $this->getFormatter()->format($this);
@@ -205,11 +230,12 @@ class Request extends Message
     }
 
     /**
-     * Normalizes [[url]] value, filling it with actual string URL value.
+     * Normalizes given URL value, filling it with actual string URL value.
+     * @param array|string $url raw URL,
+     * @return string full URL
      */
-    private function prepareUrl()
+    private function createFullUrl($url)
     {
-        $url = $this->getUrl();
         if (is_array($url)) {
             $params = $url;
             if (isset($params[0])) {
@@ -232,7 +258,7 @@ class Request extends Message
             }
         }
 
-        $this->setUrl($url);
+        return $url;
     }
 
     /**
@@ -335,11 +361,41 @@ class Request extends Message
     }
 
     /**
+     * This method is invoked right before this request is sent.
+     * The method will invoke [[Client::beforeSend()]] and trigger the [[EVENT_BEFORE_SEND]] event.
+     * @since 2.0.1
+     */
+    public function beforeSend()
+    {
+        $this->client->beforeSend($this);
+
+        $event = new RequestEvent();
+        $event->request = $this;
+        $this->trigger(self::EVENT_BEFORE_SEND, $event);
+    }
+
+    /**
+     * This method is invoked right after this request is sent.
+     * The method will invoke [[Client::afterSend()]] and trigger the [[EVENT_AFTER_SEND]] event.
+     * @param Response $response received response instance.
+     * @since 2.0.1
+     */
+    public function afterSend($response)
+    {
+        $this->client->afterSend($this, $response);
+
+        $event = new RequestEvent();
+        $event->request = $this;
+        $event->response = $response;
+        $this->trigger(self::EVENT_AFTER_SEND, $event);
+    }
+
+    /**
      * @inheritdoc
      */
     public function toString()
     {
-        $result = strtoupper($this->getMethod()) . ' ' . $this->getUrl();
+        $result = strtoupper($this->getMethod()) . ' ' . $this->getFullUrl();
 
         $parentResult = parent::toString();
         if ($parentResult !== '') {

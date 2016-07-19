@@ -7,8 +7,8 @@
 
 namespace yii\httpclient;
 
+use yii\base\Component;
 use yii\base\ErrorHandler;
-use yii\base\Object;
 use yii\web\Cookie;
 use yii\web\CookieCollection;
 use yii\web\HeaderCollection;
@@ -28,7 +28,7 @@ use Yii;
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
  */
-class Message extends Object
+class Message extends Component
 {
     /**
      * @var Client owner client instance.
@@ -230,6 +230,22 @@ class Message extends Object
     public function getData()
     {
         return $this->_data;
+    }
+
+    /**
+     * Adds data fields to the existing ones.
+     * @param array $data additional content data fields.
+     * @return $this self reference.
+     * @since 2.0.1
+     */
+    public function addData($data)
+    {
+        if (empty($this->_data)) {
+            $this->_data = $data;
+        } else {
+            $this->_data = array_merge($this->_data, $data);
+        }
+        return $this;
     }
 
     /**
