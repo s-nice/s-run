@@ -4,6 +4,9 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use common\models\Cat;
+use kartik\widgets\ActiveForm;
+use kartik\editable\Editable;
+
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\PostSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -76,7 +79,18 @@ echo newerton\fancybox\FancyBox::widget([
             ],
 			 * 
 			 */
-            'title',
+            //'title',
+			[
+				'attribute' => 'title',
+				'format' => 'raw',
+				'value' => function ($model) {
+					return Editable::widget([
+								'model' => $model,
+								'attribute' => 'title',
+								'type' => 'primary',
+					]);
+				},
+			],
 			[
 				'attribute' => 'img',
 				'format' => 'raw',
