@@ -10,6 +10,39 @@ use common\models\Cat;
 
 $this->title = '文章管理';
 $this->params['breadcrumbs'][] = $this->title;
+
+echo newerton\fancybox\FancyBox::widget([
+    'target' => 'a[rel=fancybox]',
+    'helpers' => true,
+    'mouse' => true,
+    'config' => [
+        'maxWidth' => '90%',
+        'maxHeight' => '90%',
+        'playSpeed' => 7000,
+        'padding' => 0,
+        'fitToView' => false,
+        'width' => '70%',
+        'height' => '70%',
+        'autoSize' => false,
+        'closeClick' => false,
+        'openEffect' => 'elastic',
+        'closeEffect' => 'elastic',
+        'prevEffect' => 'elastic',
+        'nextEffect' => 'elastic',
+        'closeBtn' => false,
+        'openOpacity' => true,
+        'helpers' => [
+            'title' => ['type' => 'float'],
+            'buttons' => [],
+            'thumbs' => ['width' => 68, 'height' => 50],
+            'overlay' => [
+                'css' => [
+                    'background' => 'rgba(0, 0, 0, 0.8)'
+                ]
+            ]
+        ],
+    ]
+]);
 ?>
 <div class="post-index">
     <p>
@@ -27,6 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'attribute' => 'id',
 				'headerOptions' => ['width' => '10%'],
 			],
+			/*
             'img'=>[
                 'label' => '图片',
                 'format' => [
@@ -40,7 +74,16 @@ $this->params['breadcrumbs'][] = $this->title;
                     return !empty($data->img)?Yii::$app->params['upload_url'].$data->img:'/themes/quirk/images/default/default.jpg';
                 }
             ],
+			 * 
+			 */
             'title',
+			[
+				'attribute' => 'img',
+				'format' => 'raw',
+				'value' => function ($model) {
+					return Html::a(Html::img(Yii::$app->params['upload_url'].$model->img,array('width'=>100)), Yii::$app->params['upload_url'].$model->img, ['width'=>100,'rel' => 'fancybox']);
+				},
+			],
             //'summary',
             //'content:ntext',
 
