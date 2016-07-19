@@ -29,6 +29,10 @@ class ComposerStaticInitaed39ad1b5103541f523a8477fafa0f1
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
         ),
+        'p' => 
+        array (
+            'pjkui\\kindeditor\\' => 17,
+        ),
         'm' => 
         array (
             'mdm\\admin\\' => 10,
@@ -98,6 +102,10 @@ class ComposerStaticInitaed39ad1b5103541f523a8477fafa0f1
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'pjkui\\kindeditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pjkui/kindeditor',
         ),
         'mdm\\admin\\' => 
         array (
