@@ -47,9 +47,9 @@ echo newerton\fancybox\FancyBox::widget([
 ]);
 ?>
 <div class="post-index">
-    <p>
-        <?= Html::a('新建', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+<p>
+	<?= Html::a('新建', ['create'], ['class' => 'btn btn-success']) ?>
+</p>
 <?php Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]); ?>    
 <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -93,7 +93,7 @@ echo newerton\fancybox\FancyBox::widget([
 						//'format' => Editable::FORMAT_BUTTON,
 						//'attribute' => 'title',
 						'value'=>$model->title,
-						'type' => 'primary',
+						//'type' => 'primary',
 					]);
 				},
 			],
@@ -147,7 +147,7 @@ echo newerton\fancybox\FancyBox::widget([
 						'value'=>$model->is_valid == 0 ? '未发布' : '发布',
 						'data' => [0 => '未发布', 1 => '发布'],
 						
-						'type' => 'primary',
+						//'type' => 'primary',
 					]);
 				},
 			],
