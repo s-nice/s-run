@@ -10,7 +10,7 @@ $this->title = '创建';
 $this->params['breadcrumbs'][] = ['label' => '友情链接', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="links-create">
+<div class="links-create panel">
 
     <?= $this->render('_form', [
         'model' => $model,
