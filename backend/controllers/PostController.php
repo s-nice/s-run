@@ -8,6 +8,7 @@ use common\models\PostSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use backend\actions\ChangeStatusAction;
 
 /**
  * PostController implements the CRUD actions for Post model.
@@ -45,7 +46,10 @@ class PostController extends Controller
                 'config' => [
                     'imagePathFormat' => "/image/{yyyy}{mm}{dd}/{time}{rand:6}",
                 ]
-            ]
+            ],
+			
+			'on' => ChangeStatusAction::className(),
+			'off' => ChangeStatusAction::className(),
         ];
     }
     
@@ -55,10 +59,57 @@ class PostController extends Controller
      */
     public function actionIndex()
     {
+		if (isset($_POST['hasEditable'])) {
+			
+			$post=Yii::$app->request->post();
+			
+			$keys=array_keys($post);
+			$at=$keys[2];
+			
+			$key=key($post[$at]);
+			$value=$post[$at][$key];
+			
+			$model = $this->findModel($key);
+			$model->$at=$value;
+			
+			if ($model->save()) {
+				echo 1;exit();
+			}
+		}
+		
         $searchModel = new PostSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+	
+	/**
+     * Lists all Post models.
+     * @return mixed
+     */
+    public function actionAdmin()
+    {
+		if (isset($_POST['hasEditable'])) {
+			$key=$_POST['editableKey'];
+			$index=$_POST['editableIndex'];
+			$at=$_POST['editableAttribute'];
+			$model = $this->findModel($key);
+			$post=Yii::$app->request->post();
+			$value=$post['Post'][$index][$at];
+			
+			$model->$_POST['editableAttribute']=$value;
+			if ($model->save()) {
+				echo 1;exit();
+			}
+		}
+		
+        $searchModel = new PostSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('admin', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
