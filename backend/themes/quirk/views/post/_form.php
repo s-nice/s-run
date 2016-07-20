@@ -9,7 +9,7 @@ use common\models\Cat;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="post-form">
+<div class="post-form panel-body">
 
     <?php $form = ActiveForm::begin(); ?>
 

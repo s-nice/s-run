@@ -89,6 +89,7 @@ echo newerton\fancybox\FancyBox::widget([
 						'header' => '标题',
 						'size'=>'md',
 						'inputType' => Editable::INPUT_TEXT,
+						//'asPopover' => false,
 						//'format' => Editable::FORMAT_BUTTON,
 						//'attribute' => 'title',
 						'value'=>$model->title,
@@ -119,6 +120,7 @@ echo newerton\fancybox\FancyBox::widget([
             // 'top',
             'created_at:date',
             'updated_at:date',
+			/*
             [
                 'attribute' => 'is_valid',
                 'label' => '发布状态',
@@ -130,7 +132,26 @@ echo newerton\fancybox\FancyBox::widget([
                     1 => '发布'
                 ]
             ],
-
+			*/
+			[
+				'attribute' => 'is_valid',
+				'label' => '发布状态',
+				'format' => 'raw',
+				'value' => function ($model) {
+					return Editable::widget([
+						'model' => $model,
+						'name'=>"is_valid[$model->id]",
+						'header' => '状态',
+						'inputType' => Editable::INPUT_DROPDOWN_LIST,
+						'format' => Editable::FORMAT_BUTTON,
+						'value'=>$model->is_valid == 0 ? '未发布' : '发布',
+						'data' => [0 => '未发布', 1 => '发布'],
+						
+						'type' => 'primary',
+					]);
+				},
+			],
+			
             ['class' => 'yii\grid\ActionColumn','header'=>'操作','headerOptions' => ['width' => '10%'],],
         ],
     ]); ?>

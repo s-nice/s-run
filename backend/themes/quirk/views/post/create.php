@@ -10,16 +10,8 @@ $this->title = '新建';
 $this->params['breadcrumbs'][] = ['label' => '文章管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="post-create">
-
-    <div class="col-lg-7">
-        <?= $this->render('_form', [
-            'model' => $model,
-        ]) ?>
-    </div>
-    
-    <div class="col-lg-5">
-    
-    </div>
-
+<div class="post-create panel">
+	<?= $this->render('_form', [
+		'model' => $model,
+	]) ?>
 </div>
