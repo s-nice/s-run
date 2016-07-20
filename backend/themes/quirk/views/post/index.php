@@ -4,7 +4,6 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use common\models\Cat;
-use kartik\widgets\ActiveForm;
 use kartik\editable\Editable;
 
 /* @var $this yii\web\View */
@@ -85,9 +84,15 @@ echo newerton\fancybox\FancyBox::widget([
 				'format' => 'raw',
 				'value' => function ($model) {
 					return Editable::widget([
-								'model' => $model,
-								'attribute' => 'title',
-								'type' => 'primary',
+						'model' => $model,
+						'name'=>"title[$model->id]",
+						'header' => '标题',
+						'size'=>'md',
+						'inputType' => Editable::INPUT_TEXT,
+						//'format' => Editable::FORMAT_BUTTON,
+						//'attribute' => 'title',
+						'value'=>$model->title,
+						'type' => 'primary',
 					]);
 				},
 			],
