@@ -24,7 +24,7 @@ use common\models\Cat;
         
     <?= $form->field($model, 'content')->widget('common\widgets\ueditor\Ueditor',[
             'options'=>[
-                'initialFrameWidth' => '100%',
+                'initialFrameWidth' => '50%',
                 'initialFrameHeight' => 300,
                 'toolbars' => [
                     [
