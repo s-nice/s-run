@@ -9,12 +9,8 @@ use yii\bootstrap\ActiveForm;
 $this->title = Yii::t('rbac-admin', 'Change Password');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-signup">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>Please fill out the following fields to change password:</p>
-
-    <div class="row">
+<div class="site-signup panel">
+    <div class="row panel-body">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'form-change']); ?>
                 <?= $form->field($model, 'oldPassword')->passwordInput() ?>
