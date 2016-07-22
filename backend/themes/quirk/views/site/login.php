@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
         <?= $form->field($model, 'username',[
             'inputOptions' => [
-                'placeholder' => '请输入账户',               
+                'placeholder' => '请输入账号',               
             ],
             'inputTemplate' => '<div class="input-group"><span class="input-group-addon"><i class="fa fa-user"></i></span>{input}</div>',
         ])->label(false) ?>
