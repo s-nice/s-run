@@ -147,15 +147,6 @@ return array (
       '@kartik/form' => $vendorDir . '/kartik-v/yii2-widget-activeform',
     ),
   ),
-  'yiisoft/yii2-httpclient' => 
-  array (
-    'name' => 'yiisoft/yii2-httpclient',
-    'version' => '9999999-dev',
-    'alias' => 
-    array (
-      '@yii/httpclient' => $vendorDir . '/yiisoft/yii2-httpclient',
-    ),
-  ),
   'kartik-v/yii2-tree-manager' => 
   array (
     'name' => 'kartik-v/yii2-tree-manager',
@@ -343,6 +334,15 @@ return array (
     'alias' => 
     array (
       '@kartik/widgets' => $vendorDir . '/kartik-v/yii2-widgets',
+    ),
+  ),
+  'yiisoft/yii2-httpclient' => 
+  array (
+    'name' => 'yiisoft/yii2-httpclient',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@yii/httpclient' => $vendorDir . '/yiisoft/yii2-httpclient',
     ),
   ),
 );
