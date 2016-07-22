@@ -43,6 +43,7 @@ class ComposerStaticInitaed39ad1b5103541f523a8477fafa0f1
         ),
         'k' => 
         array (
+            'kucha\\ueditor\\' => 14,
             'kartik\\widgets\\' => 15,
             'kartik\\typeahead\\' => 17,
             'kartik\\tree\\' => 12,
@@ -140,6 +141,10 @@ class ComposerStaticInitaed39ad1b5103541f523a8477fafa0f1
         'mdm\\admin\\' => 
         array (
             0 => __DIR__ . '/..' . '/mdmsoft/yii2-admin',
+        ),
+        'kucha\\ueditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kucha/ueditor',
         ),
         'kartik\\widgets\\' => 
         array (

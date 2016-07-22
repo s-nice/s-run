@@ -20,6 +20,7 @@ return array(
     'pjkui\\kindeditor\\' => array($vendorDir . '/pjkui/kindeditor'),
     'newerton\\fancybox\\' => array($vendorDir . '/newerton/yii2-fancybox'),
     'mdm\\admin\\' => array($vendorDir . '/mdmsoft/yii2-admin'),
+    'kucha\\ueditor\\' => array($vendorDir . '/kucha/ueditor'),
     'kartik\\widgets\\' => array($vendorDir . '/kartik-v/yii2-widgets'),
     'kartik\\typeahead\\' => array($vendorDir . '/kartik-v/yii2-widget-typeahead'),
     'kartik\\tree\\' => array($vendorDir . '/kartik-v/yii2-tree-manager'),
