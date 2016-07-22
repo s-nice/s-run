@@ -48,6 +48,11 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             'username' => '用户名',
+			'email' => '邮箱',
+			'created_at' => '创建时间',
+			'status' => '状态',
+			'password_hash' => '密码',
+			'updated_at'=>'更新时间',
         ];
     }
 
@@ -192,4 +197,14 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+	
+	public static function getName ( $id='')
+	{
+		$data=User::findOne($id);
+		if($data){
+			return $data['username'];
+		}else{
+			return '';
+		}
+	}
 }

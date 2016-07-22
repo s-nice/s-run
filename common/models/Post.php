@@ -21,6 +21,9 @@ use Yii;
  */
 class Post extends \yii\db\ActiveRecord
 {
+	const STATUS_OFF = 0;
+    const STATUS_ON = 1;
+	
     /**
      * @inheritdoc
      */
