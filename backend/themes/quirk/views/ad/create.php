@@ -10,7 +10,7 @@ $this->title = '创建';
 $this->params['breadcrumbs'][] = ['label' => '广告', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="ad-create">
+<div class="ad-create panel">
 
     <?= $this->render('_form', [
         'model' => $model,

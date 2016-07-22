@@ -10,7 +10,7 @@ $this->title = '新建';
 $this->params['breadcrumbs'][] = ['label' => '分类管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="cat-create">
+<div class="cat-create panel">
 
     <?= $this->render('_form', [
         'model' => $model,

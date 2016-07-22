@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = ['label' => '广告位', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = '更新';
 ?>
-<div class="adver-update">
+<div class="adver-update panel">
 
     <?= $this->render('_form', [
         'model' => $model,

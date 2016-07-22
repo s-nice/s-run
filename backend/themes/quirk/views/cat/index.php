@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use common\models\Cat;
+use common\models\User;
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\CatSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -37,7 +38,13 @@ $this->params['breadcrumbs'][] = $this->title;
 				'filter' => Cat::getList(0),
 			],
             'name',
-			'created_uid',
+			//'created_uid',
+			[
+				'attribute' => 'created_uid',
+				'value' => function ($model) {
+					return User::getName($model->created_uid);
+				},
+			],
 			'created_at:datetime',
 
             ['class' => 'yii\grid\ActionColumn','header'=>'操作','headerOptions' => ['width' => '10%'],],

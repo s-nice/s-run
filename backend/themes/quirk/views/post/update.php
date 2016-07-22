@@ -10,15 +10,10 @@ $this->params['breadcrumbs'][] = ['label' => '文章列表', 'url' => ['index']]
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = '编辑';
 ?>
-<div class="post-update">
+<div class="post-update panel">
 
-    <div class="col-lg-7">
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
-    </div>
-    
-    <div class="col-lg-5">
-
-    </div>
+ 
 </div>

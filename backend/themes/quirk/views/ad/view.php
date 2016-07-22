@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use common\models\Adver;
+use common\models\User;
 /* @var $this yii\web\View */
 /* @var $model common\models\Ad */
 
@@ -54,7 +55,12 @@ $this->params['breadcrumbs'][] = $this->title;
 				'format' => 'raw',
 				'value' => $model->is_show == 1 ? '显示' : '不显示',
 			],
-            'created_uid',
+            //'created_uid',
+			[
+				'attribute'=>'created_uid',
+				'format' => 'raw',
+				'value' => User::getName($model->created_uid),
+			],
             'created_at:datetime',
         ],
     ]) ?>

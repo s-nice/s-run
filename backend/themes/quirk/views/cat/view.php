@@ -2,12 +2,12 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
+use common\models\User;
 /* @var $this yii\web\View */
 /* @var $model common\models\Cat */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Cats', 'url' => ['index']];
+$this->title = $model->name;
+$this->params['breadcrumbs'][] = ['label' => '分类', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cat-view">
@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('更新', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('删除', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => '确定删除吗?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -31,7 +31,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
 			'pid',
             'name',
-			'created_uid',
+			//'created_uid',
+			[
+				'attribute'=>'created_uid',
+				'format' => 'raw',
+				'value' => User::getName($model->created_uid),
+			],
 			'created_at:datetime',
         ],
     ]) ?>

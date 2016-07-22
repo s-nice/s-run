@@ -100,6 +100,7 @@ echo newerton\fancybox\FancyBox::widget([
 			[
 				'attribute' => 'img',
 				'format' => 'raw',
+				'filter' => false,
 				'value' => function ($model) {
 					return Html::a(Html::img(Yii::$app->params['upload_url'].$model->img,array('width'=>100)), Yii::$app->params['upload_url'].$model->img, ['width'=>100,'rel' => 'fancybox']);
 				},
@@ -119,7 +120,7 @@ echo newerton\fancybox\FancyBox::widget([
             // 'user_name',
             // 'top',
             'created_at:date',
-            'updated_at:date',
+            //'updated_at:date',
 			/*
             [
                 'attribute' => 'is_valid',
@@ -150,6 +151,10 @@ echo newerton\fancybox\FancyBox::widget([
 						//'type' => 'primary',
 					]);
 				},
+				'filter' => [
+                    0 => '未发布',
+                    1 => '发布'
+                ]
 			],
 			
             ['class' => 'yii\grid\ActionColumn','header'=>'操作','headerOptions' => ['width' => '10%'],],

@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'orderid',
             'is_show',
             // 'created_uid',
-            'created_at',
+            'created_at:datetime',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

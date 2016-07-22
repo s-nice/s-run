@@ -2,16 +2,19 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use yii\bootstrap\Alert;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Site */
 
 $this->title = '站点设置';
 $this->params['breadcrumbs'][] = $this->title;
+
+
 ?>
 
-<div class="site-form">
+<div class="panel">
+<div class="site-form panel-body">
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -41,4 +44,5 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php ActiveForm::end(); ?>
 
+</div>
 </div>

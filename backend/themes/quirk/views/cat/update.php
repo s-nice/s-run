@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = ['label' => '分类管理', 'url' => ['index']]
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = '编辑';
 ?>
-<div class="cat-update">
+<div class="cat-update panel">
 
     <?= $this->render('_form', [
         'model' => $model,

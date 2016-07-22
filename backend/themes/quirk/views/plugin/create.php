@@ -10,7 +10,7 @@ $this->title = '新建';
 $this->params['breadcrumbs'][] = ['label' => '组件管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="plugin-create">
+<div class="plugin-create panel">
 
     <?= $this->render('_form', [
         'model' => $model,
