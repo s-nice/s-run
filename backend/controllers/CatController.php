@@ -43,6 +43,21 @@ class CatController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+	
+	/**
+     * Lists all Cat models.
+     * @return mixed
+     */
+    public function actionAdmin()
+    {
+        $searchModel = new CatSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('admin', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
 
     /**
      * Displays a single Cat model.

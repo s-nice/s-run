@@ -27,7 +27,7 @@ class SiteController extends Controller
                 'class' => 'yii\filters\HttpCache',
                 'only' => ['login'],
                 'etagSeed' => function ($action, $params) {
-                    return md5('yii-china.com');
+                    return md5('s-run.com');
                 },
             ],
         ];
@@ -83,6 +83,7 @@ class SiteController extends Controller
 		}
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+			Yii::$app->getSession()->setFlash('success', '信息提交成功！');
             return $this->render('set', [
                 'model' => $model,
             ]);
