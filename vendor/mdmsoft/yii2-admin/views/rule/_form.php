@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $form ActiveForm */
 ?>
 
-<div class="auth-item-form">
+<div class="auth-item-form panel-body">
 
     <?php $form = ActiveForm::begin(); ?>
 
