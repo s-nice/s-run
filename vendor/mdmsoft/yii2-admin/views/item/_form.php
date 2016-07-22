@@ -26,7 +26,7 @@ AutocompleteAsset::register($this);
 $this->registerJs($js);
 ?>
 
-<div class="auth-item-form">
+<div class="auth-item-form panel-body">
     <?php $form = ActiveForm::begin(['id' => 'item-form']); ?>
     <div class="row">
         <div class="col-sm-6">

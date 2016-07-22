@@ -18,7 +18,7 @@ $this->registerJs("var _opts = $opts;");
 $this->registerJs($this->render('_script.js'));
 ?>
 
-<div class="menu-form">
+<div class="menu-form panel-body">
     <?php $form = ActiveForm::begin(); ?>
     <?= Html::activeHiddenInput($model, 'parent', ['id' => 'parent_id']); ?>
     <div class="row">
