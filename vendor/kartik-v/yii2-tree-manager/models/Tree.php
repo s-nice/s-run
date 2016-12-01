@@ -46,8 +46,17 @@ use yii\db\ActiveRecord;
  * @method bool delete()
  * @method bool deleteWithChildren()
  */
-class Tree extends ActiveRecord
+class Tree extends \kartik\tree\models\Tree
 {
+	
+	/**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'tbl_tree';
+    }    
+	
     use TreeTrait;
 
     /**
