@@ -59,7 +59,7 @@ if ($model->method) {
             <div class="tab-content">
 
                 <div class="form-group has-feedback">
-                    <input id="history-search" type="text" class="form-control" placeholder="Search" />
+                    <input id="history-search" type="search" class="form-control" placeholder="Search" />
                     <span class="glyphicon glyphicon-search form-control-feedback"></span>
                 </div>
 
@@ -87,11 +87,11 @@ $this->registerJs(<<<'JS'
 
 if (window.localStorage) {
     var restHistoryTab = localStorage['restHistoryTab'] || 'collection';
-    $('a[href=#' + restHistoryTab + ']').tab('show');
-    $('a[href=#collection]').on('shown.bs.tab', function() {
+    $('a[href="#' + restHistoryTab + '"]').tab('show');
+    $('a[href="#collection"]').on('shown.bs.tab', function() {
         localStorage['restHistoryTab'] = 'collection';
     });
-    $('a[href=#history]').on('shown.bs.tab', function() {
+    $('a[href="#history"]').on('shown.bs.tab', function() {
         localStorage['restHistoryTab'] = 'history';
     });
 }
@@ -130,13 +130,16 @@ CSS
 );
 $this->registerCss(<<<'CSS'
 
-.request-list,
-.request-list ul {
+ul.request-list,
+ul.request-list ul {
     margin-bottom: 0;
     padding-left: 0;
     list-style: none;
 }
-.request-list  li {
+ul.request-list {
+    margin-bottom: 20px;
+}
+.request-list li {
     position: relative;
     display: block;
 }

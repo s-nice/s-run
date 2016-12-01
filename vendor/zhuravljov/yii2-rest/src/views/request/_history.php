@@ -47,11 +47,27 @@ use yii\helpers\Url;
                 </a>
                 <div class="actions">
                     <?php if (!$row['in_collection']): ?>
-                        <?= Html::a('&plus;', ['collection/link', 'tag' => $tag], ['data-method' => 'post']) ?>
+                        <?= Html::a('&plus;', ['collection/link', 'tag' => $tag], [
+                            'data-method' => 'post',
+                            'title' => 'Move to collection.',
+                        ]) ?>
                     <?php endif; ?>
-                    <?= Html::a('&times;', ['history/delete', 'tag' => $tag], ['data-method' => 'post']) ?>
+                    <?= Html::a('&times;', ['history/delete', 'tag' => $tag], [
+                        'data-method' => 'post',
+                        'title' => 'Remove from history.',
+                    ]) ?>
                 </div>
             </li>
         <?php endforeach; ?>
     </ul>
+
+    <?php if ($items): ?>
+        <div class="well">
+            <?= Html::a('Clear History', ['history/clear'], [
+                'data' => ['method' => 'post', 'confirm' => 'Are you sure?'],
+                'class' => 'btn btn-block btn-danger',
+                'title' => 'Full clear history.'
+            ]) ?>
+        </div>
+    <?php endif; ?>
 </div>

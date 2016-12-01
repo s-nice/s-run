@@ -75,7 +75,7 @@ HTML
                 <a href="#request-query" data-toggle="tab" tabindex="-1">
                     Query
                     <?= Html::tag('span', $queryCount, [
-                        'class' => 'badge' . (!$queryCount ? ' hidden' : '')
+                        'class' => 'counter' . (!$queryCount ? ' hidden' : '')
                     ]) ?>
                 </a>
             </li>
@@ -83,7 +83,7 @@ HTML
                 <a href="#request-body" data-toggle="tab" tabindex="-1">
                     Body
                     <?= Html::tag('span', $bodyCount, [
-                        'class' => 'badge' . (!$bodyCount ? ' hidden' : '')
+                        'class' => 'counter' . (!$bodyCount ? ' hidden' : '')
                     ]) ?>
                 </a>
             </li>
@@ -91,7 +91,7 @@ HTML
                 <a href="#request-headers" data-toggle="tab" tabindex="-1">
                     Headers
                     <?= Html::tag('span', $headersCount, [
-                        'class' => 'badge' . (!$headersCount ? ' hidden' : '')
+                        'class' => 'counter' . (!$headersCount ? ' hidden' : '')
                     ]) ?>
                 </a>
             </li>
@@ -136,15 +136,15 @@ HTML
 $this->registerJs(<<<'JS'
 
 var inputSenderTab = $('#requestform-tab');
-$('a[href=#request-query]').on('shown.bs.tab', function() {
+$('a[href="#request-query"]').on('shown.bs.tab', function() {
     inputSenderTab.val(1);
     $('#request-query').find(':text').first().focus();
 });
-$('a[href=#request-body]').on('shown.bs.tab', function() {
+$('a[href="#request-body"]').on('shown.bs.tab', function() {
     inputSenderTab.val(2);
     $('#request-body').find(':text').first().focus();
 });
-$('a[href=#request-headers]').on('shown.bs.tab', function() {
+$('a[href="#request-headers"]').on('shown.bs.tab', function() {
     inputSenderTab.val(3);
     $('#request-headers').find(':text').first().focus();
 });
